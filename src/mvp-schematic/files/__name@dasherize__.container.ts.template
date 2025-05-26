@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-<% if (withPresenter) { %>import { <%= classify(name) %>Presenter } from './<%= dasherize(name) %>.presenter';<% } %>
 
 @Component({
-  selector: 'app-<%= dasherize(name) %>',
+  selector: 'app-<%= dasherize(name) %>-container',
   templateUrl: './<%= dasherize(name) %>.container.html'
 })
 export class <%= classify(name) %>Container {
-  <% if (withPresenter) { %>presenter = new <%= classify(name) %>Presenter();<% } %>
+
 }

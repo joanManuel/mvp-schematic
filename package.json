@@ -1,6 +1,6 @@
 {
   "name": "mvp-schematic",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "schematics": "./collection.json",
   "scripts": {
     "build": "tsc -p tsconfig.json && node scripts/copy-templates.js"

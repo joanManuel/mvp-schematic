@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
-
+import { <%= classify(name) %>Presenter } from './<%= dasherize(name) %>.presenter';
 @Component({
   selector: 'app-<%= dasherize(name) %>-ui',
   templateUrl: './<%= dasherize(name) %>.component.html',
   <% if (withStyles) { %>styleUrls: ['./<%= dasherize(name) %>.component.scss']<% } %>
+  providers: [<%= classify(name) %>Presenter]
 })
-export class <%= classify(name) %>Component {}
+export class <%= classify(name) %>Component {
+  constructor(
+    private <%= camelize(name) %>Presenter: <%= classify(name) %>Presenter
+  ) {}
+}

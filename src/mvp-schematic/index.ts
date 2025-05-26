@@ -16,14 +16,6 @@ import { Schema as MvpOptions } from './schema';
 export function mvp(options: MvpOptions): Rule {
   return (_tree: Tree, _context: SchematicContext) => {
 
-     // ✅ Logs para depurar flags
-    console.log('✅ Flags recibidos:');
-    console.log('withStyles:', options.withStyles);
-    console.log('withPresenter:', options.withPresenter);
-    console.log('withModule:', options.withModule);
-    console.log('withRouting:', options.withRouting);
-    console.log('targetPath:', options.targetPath);
-
     const templateSource = apply(url('./files'), [
       filter(path => {
         if (!options.withStyles && path.includes('.component.scss')) return false;
