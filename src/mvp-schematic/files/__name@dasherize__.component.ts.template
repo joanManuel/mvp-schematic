@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { <%= classify(name) %>Presenter } from './<%= dasherize(name) %>.presenter';
+<% if (withPresenter) { %>
+import { <%= classify(name) %>Presenter } from './<%= dasherize(name) %>.presenter';<% } %>
+
 @Component({
   selector: 'app-<%= dasherize(name) %>-ui',
   templateUrl: './<%= dasherize(name) %>.component.html',
-  <% if (withStyles) { %>styleUrls: ['./<%= dasherize(name) %>.component.scss']<% } %>
-  providers: [<%= classify(name) %>Presenter]
+  <% if (withStyles) { %>
+  styleUrls: ['./<%= dasherize(name) %>.component.scss']<% } %>
+  <% if (withPresenter) { %> providers: [<%= classify(name) %>Presenter] <% } %>
 })
 export class <%= classify(name) %>Component {
-  constructor(
-    private <%= camelize(name) %>Presenter: <%= classify(name) %>Presenter
-  ) {}
+  <% if (withPresenter) { %>
+  constructor(private presenter: <%= classify(name) %>Presenter) {}
+  <% } %>
 }
