@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { <%= classify(name) %>Container } from './<%= dasherize(name) %>.container';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: <%= classify(name) %>Container
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class <%= classify(name) %>RoutingModule {}

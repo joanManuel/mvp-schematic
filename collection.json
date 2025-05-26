@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/schematics",
+  "schematics": {
+    "mvp": {
+      "description": "Genera un componente MVP",
+      "factory": "./dist/mvp-schematic/index#mvp",
+      "schema": "./src/mvp-schematic/schema.json"
+    }
+  }
+}

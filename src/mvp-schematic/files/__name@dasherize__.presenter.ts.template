@@ -1,0 +1,5 @@
+export class <%= classify(name) %>Presenter {
+  constructor() {
+    // Presenter logic here
+  }
+}

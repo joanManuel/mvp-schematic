@@ -1,0 +1,15 @@
+{
+  "name": "mvp-schematic",
+  "version": "0.0.1",
+  "schematics": "./collection.json",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-templates.js"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "^15.0.0",
+    "@angular-devkit/schematics": "^15.0.0",
+    "@types/node": "^22.15.21",
+    "fs-extra": "^11.3.0",
+    "typescript": "^4.9.0"
+  }
+}

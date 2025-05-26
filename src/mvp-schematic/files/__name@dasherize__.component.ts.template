@@ -1,0 +1,8 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-ui',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  <% if (withStyles) { %>styleUrls: ['./<%= dasherize(name) %>.component.scss']<% } %>
+})
+export class <%= classify(name) %>Component {}

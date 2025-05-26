@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "MvpSchematic",
+  "title": "MVP Component Generator",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del componente base MVP"
+    },
+    "withStyles": {
+      "type": "boolean",
+      "default": true,
+      "description": "¿Incluir archivo de estilos (.scss)?"
+    },
+    "withPresenter": {
+      "type": "boolean",
+      "default": true,
+      "description": "¿Incluir archivo presenter.ts?"
+    },
+    "withModule": {
+      "type": "boolean",
+      "default": true,
+      "description": "¿Crear módulo para el componente?"
+    },
+    "withRouting": {
+      "type": "boolean",
+      "default": true,
+      "description": "¿Crear archivo de routing?"
+    },
+    "targetPath": {
+      "type": "string",
+      "default": "src/app",
+      "description": "Ruta de destino del componente"
+    }
+  },
+  "required": ["name"]
+}
