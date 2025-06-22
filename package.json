@@ -1,14 +1,17 @@
 {
   "name": "mvp-schematic",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "schematics": "./collection.json",
   "scripts": {
-    "build": "tsc -p tsconfig.json && node scripts/copy-templates.js"
+    "build": "tsc -p tsconfig.json && node scripts/copy-templates.js",
+    "postinstall": "node scripts/postinstall.js"
   },
   "files": [
     "dist",
     "collection.json",
-    "src/mvp-schematic/schema.json"
+    "src/mvp-schematic/schema.json",
+    "scripts/generate-mvp.js",
+    "scripts/postinstall.js"
   ],
   "devDependencies": {
     "@angular-devkit/core": "^15.0.0",
