@@ -1,6 +1,6 @@
 {
   "name": "mvp-schematic",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "schematics": "./collection.json",
   "scripts": {
     "build": "tsc -p tsconfig.json && node scripts/copy-templates.js",
@@ -13,6 +13,9 @@
     "scripts/generate-mvp.js",
     "scripts/postinstall.js"
   ],
+  "bin": {
+    "mvp-schematic": "./cli.js"
+  },
   "devDependencies": {
     "@angular-devkit/core": "^15.0.0",
     "@angular-devkit/schematics": "^15.0.0",
