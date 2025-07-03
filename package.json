@@ -4,7 +4,8 @@
   "schematics": "./collection.json",
   "scripts": {
     "build": "tsc -p tsconfig.json && node scripts/copy-templates.js",
-    "postinstall": "node scripts/postinstall.js"
+    "postinstall": "node scripts/postinstall.js",
+    "generate:mvp": "node scripts/generate-mvp.js"
   },
   "files": [
     "dist",

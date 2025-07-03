@@ -6,36 +6,44 @@ const { exec } = require('child_process');
         {
             type: 'input',
             name: 'name',
-            message: 'Nombre del componente:',
-            validate: (input) => !!input || 'Debe ingresar un nombre.'
+            message: 'Component name (no spaces or special characters):',
+            validate: (input) =>
+                /^[a-zA-Z0-9\-_]+$/.test(input) || 'Name must not contain spaces or special characters.'
         },
         {
             name: 'directory',
-            message: '¿En qué ruta deseas crearlo?',
+            message: 'Target path for the component:',
             default: 'src/app/features'
         },
         {
             type: 'confirm',
+            name: 'standalone',
+            message: 'Use Angular standalone style?',
+            default: false
+        },
+        {
+            type: 'confirm',
             name: 'withPresenter',
-            message: '¿Incluir archivo presenter.ts?',
+            message: 'Include presenter.ts file?',
             default: true
         },
         {
             type: 'confirm',
             name: 'withModule',
-            message: '¿Incluir archivo module.ts?',
-            default: true
+            message: 'Include module.ts file?',
+            default: true,
+            when: (answers) => !answers.standalone
         },
         {
             type: 'confirm',
             name: 'withRouting',
-            message: '¿Incluir archivo routing.ts?',
+            message: 'Include routing.ts file?',
             default: true
         },
         {
             type: 'confirm',
             name: 'withStyles',
-            message: '¿Incluir archivo .scss?',
+            message: 'Include .scss file?',
             default: true
         }
     ]);
@@ -43,13 +51,14 @@ const { exec } = require('child_process');
     const cmd =
         `ng generate mvp-schematic:mvp ` +
         `--name=${answers.name} ` +
+        `--standalone=${answers.standalone} ` +
         `--with-presenter=${answers.withPresenter} ` +
-        `--with-module=${answers.withModule} ` +
+        `--with-module=${answers.withModule !== undefined ? answers.withModule : false} ` +
         `--with-routing=${answers.withRouting} ` +
         `--with-styles=${answers.withStyles} ` +
         `--target-path='${answers.directory}'`;
 
-    console.log('\n🔧 Ejecutando comando:\n', cmd, '\n');
+    console.log('\n🔧 Running command:\n', cmd, '\n');
 
     exec(cmd, (error, stdout, stderr) => {
         if (error) {

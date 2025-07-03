@@ -11,7 +11,7 @@ import { <%= classify(name) %>RoutingModule } from './<%= dasherize(name) %>.rou
   ],
   imports: [
     CommonModule,
-    <%= classify(name) %>RoutingModule
+    <%= classify(name) %>RoutingModule,
   ]
 })
 export class <%= classify(name) %>Module {}

@@ -8,6 +8,11 @@
       "type": "string",
       "description": "Nombre del componente base MVP"
     },
+      "standalone": {
+      "type": "boolean",
+      "default": false,
+      "description": "¿Usar la nueva forma standalone de Angular?"
+    },
     "withStyles": {
       "type": "boolean",
       "default": true,

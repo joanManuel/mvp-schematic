@@ -1,0 +1,9 @@
+import { Routes } from '@angular/router';
+import { <%= classify(name) %>Container } from './<%= dasherize(name) %>.container';
+
+export default [
+  {
+    path: '',
+    component: <%= classify(name) %>Container
+  }
+] as Routes;

@@ -5,4 +5,5 @@ export interface Schema {
   withModule?: boolean;
   withRouting?: boolean;
   targetPath?: string;
+  standalone?: boolean;
 }

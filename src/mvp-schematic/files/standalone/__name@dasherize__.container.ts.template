@@ -1,0 +1,12 @@
+import { Component } from '@angular/core';
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-container',
+  templateUrl: './<%= dasherize(name) %>.container.html',<% if (!isStandaloneDefault) { %>
+  standalone: true,<% } %>
+  imports: [<%= classify(name) %>Component],
+})
+export class <%= classify(name) %>Container {
+
+}

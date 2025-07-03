@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';<% if (withPresenter) { %>
+import { <%= classify(name) %>Presenter } from './<%= dasherize(name) %>.presenter';<% } %>
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-ui',
+  templateUrl: './<%= dasherize(name) %>.component.html',<% if (!isStandaloneDefault) { %>
+  standalone: true,<% } %><% if (withStyles) { %>
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'],<% } %><% if (withPresenter) { %>
+  providers: [<%= classify(name) %>Presenter],<% } %>
+})
+export class <%= classify(name) %>Component {<% if (withPresenter) { %>
+  constructor(public presenter: <%= classify(name) %>Presenter) {}
+<% } %>
+}
