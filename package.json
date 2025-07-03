@@ -1,6 +1,6 @@
 {
   "name": "mvp-schematic",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "schematics": "./collection.json",
   "scripts": {
     "build": "tsc -p tsconfig.json && node scripts/copy-templates.js",
@@ -14,6 +14,7 @@
     "scripts/postinstall.js",
     "README.md"
   ],
+  "license": "MIT",
   "bin": {
     "mvp-schematic": "./cli.js"
   },
