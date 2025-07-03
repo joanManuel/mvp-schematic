@@ -70,7 +70,7 @@ ng generate mvp-schematic:mvp --name=example --standalone=true --with-presenter=
 - **Modern routing:** When using standalone, generates routes as `export default [] as Routes;`.
 - **Presenter pattern:** Optionally generate a presenter service for the MVP pattern.
 - **Customizable:** Choose whether to include styles, routing, presenter, and module files.
-- **Version-aware:** Automatically adapts to Angular versions where standalone is the default (Angular 17+).
+- **Version-aware:** Automatically adapts to Angular versions where standalone is the default (Angular 19+).
 
 ---
 
